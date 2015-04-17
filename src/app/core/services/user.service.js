@@ -38,7 +38,7 @@ angular.module('boilerplate')
           method: 'POST',
           data: user,
           transformResponse: appendTransform($http.defaults.transformResponse, function(value) {
-            session = value.id;
+            _setSession(value.id);
             return value;
           })
         });
@@ -50,6 +50,10 @@ angular.module('boilerplate')
        */
       var _getSession = function() {
         return session;
+      };
+
+      var _setSession = function(ses) {
+        session = ses;
       };
 
       /**
@@ -64,6 +68,7 @@ angular.module('boilerplate')
       return {
         createSession: _createSession,
         getSession: _getSession,
+        setSession: _setSession,
         destroySession: _destroySession
       };
 

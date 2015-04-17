@@ -15,7 +15,7 @@ module.exports = function(config) {
 
     autoWatch: false,
 
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'sinon'],
 
     reporters: ['progress', 'coverage'],
 

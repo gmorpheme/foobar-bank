@@ -48,6 +48,7 @@ angular.module('boilerplate')
        * @return {Function}          A promise
        */
       var _create = function(transfer) {
+        console.log(transfer)
         return $http({
           url: [api.base, api.session.create, UserSrv.getSession(), '/', api.transfer.create].join(''),
           method: 'POST',

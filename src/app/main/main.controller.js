@@ -31,7 +31,7 @@ angular.module('boilerplate')
         var validation = LoginValidationSrv.validate(user);
         var boundError = this.setError.bind(this);
 
-        if (validation.valid) {
+        if (!validation) {
           UserSrv.createSession(user).then(this.loginSuccess, boundError);
         } else {
           boundError(validation.message);
