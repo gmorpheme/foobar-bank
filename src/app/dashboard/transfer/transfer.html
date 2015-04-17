@@ -5,26 +5,16 @@
 
     <a href="/dashboard" id="back">&laquo; Back to dashboard</a>
 
-    <table ng-show="transfers.length" id="transfer">
-      <tr>
-        <th>Amount</th>
-        <th>Account</th>
-        <th>Date</th>
-      </tr>
-      <tr ng-repeat="tra in transfers" id="transfer-{{tra.id}}">
-        <td class="amount">{{tra.amount}}</td>
-        <td class="to">{{tra.to}}</td>
-        <td class="timestamp">{{tra.timestamp | date:'dd/MM/yyyy @ h:mma'}}</td>
-      </tr>
-    </table>
+    <p class="success" ng-show="newTransfer.success">Your transfer was made</p>
+    <p class="error" ng-show="newTransfer.error">There was an error processing your tranfer</p>
 
     <label for="amount">Transfer amount</label>
-    <input type="number" name="amount" id="amount" ng-model="transfer.amount" />
+    <input type="number" name="amount" id="amount" ng-model="newTransfer.transfer.amount" />
 
     <label for="to">To account</label>
-    <input type="text" name="to" id="to" ng-model="transfer.to" />
+    <input type="text" name="account" id="account" ng-model="newTransfer.transfer.account" />
 
-    <input type="submit" ng-click="makeTransfer(transfer)" value="Transfer" class="transfer" />
+    <input type="submit" ng-click="newTransfer.create(newTransfer.transfer)" value="Transfer" class="transfer" />
 
   </form>
 </div>

@@ -1,0 +1,15 @@
+{
+  "transfers": [{
+    "amount": 398.45,
+    "account": 4098093484,
+    "date": "Fri Apr 17 2015 12:55:43 GMT+0100 (BST)"
+  }, {
+    "amount": 38,
+    "account": 2398738347,
+    "date": "Thu Apr 16 2015 12:55:43 GMT+0100 (BST)"
+  }, {
+    "amount": 102,
+    "account": 2398747393,
+    "date": "Wed Apr 15 2015 12:55:43 GMT+0100 (BST)"
+  }]
+}

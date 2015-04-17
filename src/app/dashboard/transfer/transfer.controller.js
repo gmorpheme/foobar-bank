@@ -2,18 +2,39 @@
 
 angular.module('boilerplate')
   .controller('TransferCtrl', [
-    '$scope',
-    function($scope) {
+    '$location',
+    'TransferSrv',
+    function($location, TransferSrv) {
 
-      $scope.transfers = [];
+      /**
+       * Set our UI state to successful
+       */
+      function transferCreateSuccess() {
+        this.success = true;
+      }
 
-      $scope.makeTransfer = function(trans) {
-        trans.timestamp = new Date();
-        trans.id = $scope.transfers.length + 1;
-        $scope.transfers.push(angular.copy(trans));
+      /**
+       * Set out UI state to failure
+       */
+      function transferCreateFailure() {
+        this.error = true;
+      }
 
-        trans.amount = '';
-        trans.to = '';
-      };
+      /**
+       * Create a transfer
+       * @param  {Object} transfer The transfer object
+       */
+      function create(transfer) {
+        var boundTransferCreateSuccess = this.transferCreateSuccess.bind(this),
+            boundTransferCreateFailure = this.transferCreateFailure.bind(this);
+
+        TransferSrv.create(transfer).then(boundTransferCreateSuccess, boundTransferCreateFailure);
+      }
+
+      _.extend(this, {
+        create: create,
+        transferCreateSuccess: transferCreateSuccess,
+        transferCreateFailure: transferCreateFailure
+      });
 
     } ]);

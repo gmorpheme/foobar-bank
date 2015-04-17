@@ -1,3 +1,12 @@
 {
-	"hello": "world"
+	"api": {
+    "base": "/api/",
+    "session": {
+      "create": "session/"
+    },
+    "transfer": {
+      "get": "transfer/",
+      "create": "transfer/"
+    }
+  }
 }

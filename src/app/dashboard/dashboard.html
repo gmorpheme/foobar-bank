@@ -1,9 +1,21 @@
 <div id="container">
   <h1>eBanking Dashboard</h1>
 
-  <form novalidate class="simple-form">
+  <a href="" ng-click="dashboard.logout()">Logout</a>
 
-    <a href="/dashboard/transfer" id="transfer">Make transfer</a>
+  <table ng-show="dashboard.transfers.length" id="transfer-list">
+    <tr>
+      <th>Amount</th>
+      <th>Account</th>
+      <th>Date</th>
+    </tr>
+    <tr ng-repeat="tra in dashboard.transfers" id="transfer-{{tra.id}}">
+      <td class="amount">{{tra.amount}}</td>
+      <td class="to">{{tra.account}}</td>
+      <td class="timestamp">{{tra.date | date:'dd/MM/yyyy @ h:mma'}}</td>
+    </tr>
+  </table>
 
-  </form>
+  <a href="/dashboard/transfer" id="transfer">New transfer</a>
+
 </div>

@@ -17,15 +17,23 @@ angular.module('boilerplate', [
     $routeProvider
       .when('/', {
         templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        controllerAs: 'main'
       })
       .when('/dashboard', {
         templateUrl: 'app/dashboard/dashboard.html',
-        controller: 'DashboardCtrl'
+        controller: 'DashboardCtrl',
+        controllerAs: 'dashboard',
+        resolve: {
+          transfers: function(TransferSrv) {
+            return TransferSrv.get();
+          }
+        }
       })
       .when('/dashboard/transfer', {
         templateUrl: 'app/dashboard/transfer/transfer.html',
-        controller: 'TransferCtrl'
+        controller: 'TransferCtrl',
+        controllerAs: 'newTransfer'
       })
       .otherwise({
         redirectTo: '/'

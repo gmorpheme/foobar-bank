@@ -3,15 +3,15 @@
 
   <form novalidate class="simple-form">
 
-    <p ng-show="error" class="error">{{error}}</p>
+    <p ng-show="main.error" class="error">{{main.error}}</p>
 
     <label for="username">Username</label>
-    <input type="text" name="username"  id="password" ng-model="user.username" />
+    <input type="text" name="username" id="password" ng-model="main.user.username" />
 
     <label for="password">Password</label>
-    <input type="password" name="password" id="password" ng-model="user.password">
+    <input type="password" name="password" id="password" ng-model="main.user.password">
 
-    <input type="submit" ng-click="login(user)" value="Login" class="login" />
+    <input type="submit" ng-click="main.login(main.user)" value="Login" class="login" />
 
   </form>
 </div>

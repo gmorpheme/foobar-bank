@@ -2,8 +2,21 @@
 
 angular.module('boilerplate')
   .controller('DashboardCtrl', [
-    function() {
+    'transfers',
+    'UserSrv',
+    function(transfers, UserSrv) {
 
-      console.log('Dashboard!');
+      /**
+       * Destroys a user session
+       * @return {[type]} [description]
+       */
+      function logout() {
+        UserSrv.destroySession();
+      }
+
+      _.extend(this, {
+        logout: logout,
+        transfers: transfers.data.transfers
+      });
 
     } ]);

@@ -2,29 +2,47 @@
 
 angular.module('boilerplate')
   .controller('MainCtrl', [
-    '$scope',
     '$location',
-    function($scope, $location) {
+    'LoginValidationSrv',
+    'UserSrv',
+    function($location, LoginValidationSrv, UserSrv) {
 
-      $scope.login = function(user) {
+      /**
+       * Method to set an error into th current scope
+       * @param {String} err The error string
+       */
+      function setError(err) {
+        this.error = err;
+      }
 
-        if (!user) {
-          $scope.error = 'You must enter a username and password';
-          return false;
-        }
-
-        if (!user.username) {
-          $scope.error = 'You must enter a username';
-          return false;
-        }
-
-        if (!user.password) {
-          $scope.error = 'You must enter a password';
-          return false;
-        }
-
+      /**
+       * A method called when a user is authenticated successfully
+       */
+      function loginSuccess() {
         $location.path('/dashboard');
+      }
+
+      /**
+       * Handles user validation and login
+       * @param  {Object} user A user object, to be validated
+       * @public
+       */
+      function login(user) {
+        var validation = LoginValidationSrv.validate(user),
+            boundError = this.setError.bind(this);
+
+        if (validation.valid) {
+          UserSrv.createSession(user).then(this.loginSuccess, boundError);
+        } else {
+          boundError(validation.message);
+        }
 
       };
+
+      _.extend(this, {
+        login: login,
+        setError: setError,
+        loginSuccess: loginSuccess
+      });
 
     } ]);
