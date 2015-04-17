@@ -28,8 +28,8 @@ angular.module('boilerplate')
        * @public
        */
       function login(user) {
-        var validation = LoginValidationSrv.validate(user),
-            boundError = this.setError.bind(this);
+        var validation = LoginValidationSrv.validate(user);
+        var boundError = this.setError.bind(this);
 
         if (validation.valid) {
           UserSrv.createSession(user).then(this.loginSuccess, boundError);
@@ -45,4 +45,4 @@ angular.module('boilerplate')
         loginSuccess: loginSuccess
       });
 
-    } ]);
+    }]);

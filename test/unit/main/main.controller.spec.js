@@ -1,8 +1,8 @@
 'use strict';
 
 describe('The Main controller', function() {
-  var scope,
-      MainCtrl;
+  var scope;
+  var MainCtrl;
 
   beforeEach(module('boilerplate'));
 

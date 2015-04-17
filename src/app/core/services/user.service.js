@@ -22,6 +22,7 @@ angular.module('boilerplate')
       function appendTransform(defaults, transform) {
         // We can't guarantee that the default transformation is an array
         defaults = angular.isArray(defaults) ? defaults : [defaults];
+
         // Append the new transformation to the defaults
         return defaults.concat(transform);
       }
@@ -66,4 +67,4 @@ angular.module('boilerplate')
         destroySession: _destroySession
       };
 
-  }]);
+    }]);

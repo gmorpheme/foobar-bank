@@ -9,30 +9,30 @@ angular.module('boilerplate')
      * @return {Object}      A validation object
      */
     var _validate = function(user) {
-        if (!user) {
-          return {
-            valid: false,
-            message: 'You must enter a username and password'
-          };
-        }
-
-        if (!user.username) {
-          return {
-            valid: false,
-            message: 'You must enter a username'
-          };
-        }
-
-        if (!user.password) {
-          return {
-            valid: false,
-            message: 'You must enter a password'
-          };
-        }
-
+      if (!user) {
         return {
-          valid: true
+          valid: false,
+          message: 'You must enter a username and password'
         };
+      }
+
+      if (!user.username) {
+        return {
+          valid: false,
+          message: 'You must enter a username'
+        };
+      }
+
+      if (!user.password) {
+        return {
+          valid: false,
+          message: 'You must enter a password'
+        };
+      }
+
+      return {
+        valid: true
+      };
     };
 
     return {

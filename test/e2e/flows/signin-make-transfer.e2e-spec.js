@@ -1,8 +1,8 @@
 'use strict';
 
-var loginPage = require('../page-objects/login.object'),
-    dashboardPage = require('../page-objects/dashboard.object'),
-    transferPage = require('../page-objects/transfer.object');
+var loginPage = require('../page-objects/login.object');
+var dashboardPage = require('../page-objects/dashboard.object');
+var transferPage = require('../page-objects/transfer.object');
 
 describe('The boilerplate', function() {
 
@@ -27,6 +27,7 @@ describe('The boilerplate', function() {
     transferOutput.getAmount(function(amount) {
       expect(amount).toBe('2000');
     });
+
     transferOutput.getAccount(function(account) {
       expect(account).toBe('348093840930');
     });

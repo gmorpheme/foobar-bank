@@ -4,12 +4,15 @@
 function enterUserName(username) {
   return element(by.model('user.username')).sendKeys(username);
 }
+
 function enterPassword(password) {
   return element(by.model('user.password')).sendKeys(password);
 }
+
 function submitLoginForm() {
   return element(by.css('.login')).click();
 }
+
 function getErrorText(next) {
   element(by.css('.error')).getText().then(next);
 }

@@ -25,8 +25,8 @@ angular.module('boilerplate')
        * @param  {Object} transfer The transfer object
        */
       function create(transfer) {
-        var boundTransferCreateSuccess = this.transferCreateSuccess.bind(this),
-            boundTransferCreateFailure = this.transferCreateFailure.bind(this);
+        var boundTransferCreateSuccess = this.transferCreateSuccess.bind(this);
+        var boundTransferCreateFailure = this.transferCreateFailure.bind(this);
 
         TransferSrv.create(transfer).then(boundTransferCreateSuccess, boundTransferCreateFailure);
       }
@@ -37,4 +37,4 @@ angular.module('boilerplate')
         transferCreateFailure: transferCreateFailure
       });
 
-    } ]);
+    }]);

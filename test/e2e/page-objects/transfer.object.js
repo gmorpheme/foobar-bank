@@ -4,12 +4,15 @@
 function enterAmount(amount) {
   return element(by.model('transfer.amount')).sendKeys(amount);
 }
+
 function enterAccount(account) {
   return element(by.model('transfer.to')).sendKeys(account);
 }
+
 function makeTransfer() {
   return element(by.css('.transfer')).click();
 }
+
 function getBackToDashboardLink() {
   return element(by.css('#back'));
 }
@@ -33,6 +36,7 @@ var GetTransferByIndex = function(index) {
   this.getTimestamp = function(next) {
     element(by.css('#transfer-' + index + ' .timestamp')).getText().then(next);
   };
+
 };
 
 module.exports = {

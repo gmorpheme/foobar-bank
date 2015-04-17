@@ -19,4 +19,4 @@ angular.module('boilerplate')
         transfers: transfers.data.transfers
       });
 
-    } ]);
+    }]);

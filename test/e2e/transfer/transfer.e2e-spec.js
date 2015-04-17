@@ -15,6 +15,7 @@ describe('The boilerplate', function() {
     transferOutput.getAmount(function(amount) {
       expect(amount).toBe('2000');
     });
+
     transferOutput.getAccount(function(account) {
       expect(account).toBe('348093840930');
     });
@@ -24,12 +25,13 @@ describe('The boilerplate', function() {
     transferPage.addTransfer('2000', '348093840930');
     transferPage.addTransfer('3000', '830459834003');
 
-    var transferOutput = new transferPage.GetTransferByIndex(1),
-        transferOutput2 = new transferPage.GetTransferByIndex(2);
+    var transferOutput = new transferPage.GetTransferByIndex(1);
+    var transferOutput2 = new transferPage.GetTransferByIndex(2);
 
     transferOutput.getAmount(function(amount) {
       expect(amount).toBe('2000');
     });
+
     transferOutput.getAccount(function(account) {
       expect(account).toBe('348093840930');
     });
@@ -37,6 +39,7 @@ describe('The boilerplate', function() {
     transferOutput2.getAmount(function(amount) {
       expect(amount).toBe('3000');
     });
+
     transferOutput2.getAccount(function(account) {
       expect(account).toBe('830459834003');
     });

@@ -3,24 +3,24 @@
 module.exports = function(config) {
 
   config.set({
-    basePath: '..', //!\\ Ignored through gulp-karma //!\\
+    basePath: '..',
 
-    files: [ //!\\ Ignored through gulp-karma //!\\
-        'src/bower_components/angular/angular.js',
-        'src/bower_components/angular/angular-route.js',
-        'src/bower_components/angular-mocks/angular-mocks.js',
-        'src/app/**/*.js',
-        'test/unit/**/*.js'
+    files: [
+      'src/bower_components/angular/angular.js',
+      'src/bower_components/angular/angular-route.js',
+      'src/bower_components/angular-mocks/angular-mocks.js',
+      'src/app/**/*.js',
+      'test/unit/**/*.js'
     ],
 
     autoWatch: false,
 
-    frameworks: [ 'jasmine' ],
+    frameworks: ['jasmine'],
 
-    reporters: [ 'progress', 'coverage' ],
+    reporters: ['progress', 'coverage'],
 
     preprocessors: {
-      'src/app/**/*.js': [ 'coverage' ]
+      'src/app/**/*.js': ['coverage']
     },
 
     coverageReporter: {
@@ -28,13 +28,13 @@ module.exports = function(config) {
       dir: 'coverage/'
     },
 
-    browsers: [ 'PhantomJS' ],
+    browsers: ['PhantomJS'],
 
     plugins: [
-        'karma-phantomjs-launcher',
-        'karma-jasmine',
-        'karma-coverage',
-        'karma-sinon'
+      'karma-phantomjs-launcher',
+      'karma-jasmine',
+      'karma-coverage',
+      'karma-sinon'
     ]
   });
 

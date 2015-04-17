@@ -28,7 +28,7 @@ gulp.task('hint', function () {
 gulp.task('codestyle', function () {
     return gulp.src(['src/{app,components}/**/*.js', 'test/**/*.js'])
       .pipe($.jscs({
-        preset: 'jquery',
+        preset: 'airbnb',
         validateQuoteMarks: '\'',
         excludeFiles: ['src/app/core/constant/config.constant.js']
       }));
