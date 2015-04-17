@@ -37,7 +37,7 @@ angular.module('boilerplate')
           boundError(validation.message);
         }
 
-      };
+      }
 
       _.extend(this, {
         login: login,

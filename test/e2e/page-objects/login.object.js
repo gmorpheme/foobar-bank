@@ -27,4 +27,4 @@ module.exports = {
   submitLoginForm: submitLoginForm,
   getErrorText: getErrorText,
   enterDetailsAndSubmitForm: enterDetailsAndSubmitForm
-}
+};

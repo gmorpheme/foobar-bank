@@ -52,7 +52,7 @@ angular.module('boilerplate')
           data: transfer,
           transformResponse: appendTransform($http.defaults.transformResponse, handleSessionError)
         });
-      }
+      };
 
       return {
         get: _get,

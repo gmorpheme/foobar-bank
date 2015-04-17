@@ -42,4 +42,4 @@ module.exports = {
   makeTransfer: makeTransfer,
   GetTransferByIndex: GetTransferByIndex,
   getBackToDashboardLink: getBackToDashboardLink
-}
+};

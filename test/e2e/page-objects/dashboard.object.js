@@ -7,4 +7,4 @@ function getTransferLink() {
 
 module.exports = {
   getTransferLink: getTransferLink
-}
+};

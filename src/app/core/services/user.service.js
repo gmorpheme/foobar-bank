@@ -11,7 +11,7 @@ angular.module('boilerplate')
        * Store a local copy of our session ID
        * @type {String}
        */
-      var session = undefined;
+      var session;
 
       /**
        * This function enriches the standard Angular response transforms with custom transfers
@@ -49,7 +49,7 @@ angular.module('boilerplate')
        */
       var _getSession = function() {
         return session;
-      }
+      };
 
       /**
        * Destroys a current session and redirects to the landing page
@@ -58,7 +58,7 @@ angular.module('boilerplate')
       var _destroySession = function() {
         session = undefined;
         $location.path('/');
-      }
+      };
 
       return {
         createSession: _createSession,
