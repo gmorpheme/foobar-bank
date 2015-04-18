@@ -1,40 +1,40 @@
-'use strict';
+// 'use strict';
 
-var loginPage = require('../page-objects/login.object');
-var dashboardPage = require('../page-objects/dashboard.object');
-var transferPage = require('../page-objects/transfer.object');
+// var loginPage = require('../page-objects/login.object');
+// var dashboardPage = require('../page-objects/dashboard.object');
+// var transferPage = require('../page-objects/transfer.object');
 
-describe('The foobank', function() {
+// describe('The foobank', function() {
 
-  beforeEach(function() {
-    browser.get('http://localhost:3000/');
-  });
+//   beforeEach(function() {
+//     browser.get('http://localhost:3000/');
+//   });
 
-  it('the user should signin, make a transfer and go back to the dashboard', function() {
+//   it('the user should signin, make a transfer and go back to the dashboard', function() {
 
-    // Login page
-    loginPage.enterDetailsAndSubmitForm('Username', 'Password');
-    expect(browser.getLocationAbsUrl()).toBe('/dashboard');
+//     // Login page
+//     loginPage.enterDetailsAndSubmitForm('Username', 'Password');
+//     expect(browser.getLocationAbsUrl()).toBe('/dashboard');
 
-    // Dashboard page
-    dashboardPage.getTransferLink().click();
-    expect(browser.getLocationAbsUrl()).toBe('/dashboard/transfer');
+//     // Dashboard page
+//     dashboardPage.getTransferLink().click();
+//     expect(browser.getLocationAbsUrl()).toBe('/dashboard/transfer');
 
-    // Transfer page
-    transferPage.addTransfer('2000', '348093840930');
+//     // Transfer page
+//     transferPage.addTransfer('2000', '348093840930');
 
-    var transferOutput = new transferPage.GetTransferByIndex(1);
-    transferOutput.getAmount(function(amount) {
-      expect(amount).toBe('2000');
-    });
+//     var transferOutput = new transferPage.GetTransferByIndex(1);
+//     transferOutput.getAmount(function(amount) {
+//       expect(amount).toBe('2000');
+//     });
 
-    transferOutput.getAccount(function(account) {
-      expect(account).toBe('348093840930');
-    });
+//     transferOutput.getAccount(function(account) {
+//       expect(account).toBe('348093840930');
+//     });
 
-    transferPage.getBackToDashboardLink().click();
-    expect(browser.getLocationAbsUrl()).toBe('/dashboard');
+//     transferPage.getBackToDashboardLink().click();
+//     expect(browser.getLocationAbsUrl()).toBe('/dashboard');
 
-  });
+//   });
 
-});
+// });
