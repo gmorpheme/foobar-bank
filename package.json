@@ -1,7 +1,7 @@
 {
-  "name": "app",
-  "version": "0.0.0",
-  "description": "A base project for building high quality client-side applications",
+  "name": "foobank",
+  "version": "0.0.1",
+  "description": "Foobank's single page application from end",
   "repository": {
     "type": "git",
     "url": "https://github.com/Joe8Bit/foobank.git"
