@@ -18,7 +18,8 @@ angular.module('boilerplate')
       /**
        * A method called when a user is authenticated successfully
        */
-      function loginSuccess() {
+      function loginSuccess(res) {
+        UserSrv.setSession(res.data.id);
         $location.path('/dashboard');
       }
 

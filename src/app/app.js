@@ -23,6 +23,11 @@ angular.module('boilerplate', [
           controller: 'DashboardCtrl',
           controllerAs: 'dashboard',
           resolve: {
+            auth: function(UserSrv, $location) {
+              if (!UserSrv.getSession()) {
+                $location.path('/');
+              }
+            },
             transfers: function(TransferSrv) {
               return TransferSrv.get();
             }
@@ -31,7 +36,14 @@ angular.module('boilerplate', [
         .when('/dashboard/transfer', {
           templateUrl: 'app/dashboard/transfer/transfer.html',
           controller: 'TransferCtrl',
-          controllerAs: 'newTransfer'
+          controllerAs: 'newTransfer',
+          resolve: {
+            auth: function(UserSrv, $location) {
+              if (!UserSrv.getSession()) {
+                $location.path('/');
+              }
+            }
+          }
         })
         .otherwise({
           redirectTo: '/'

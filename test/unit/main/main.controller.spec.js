@@ -28,8 +28,15 @@ describe('The Main controller', function() {
 
     UserSrv = {
       createSession: sinon.stub().returns({
-        then: sinon.stub()
-      })
+        then: function(success, failure) {
+          success({
+            data: {
+              id: 'lkdfjlkjg'
+            }
+          });
+        }
+      }),
+      setSession: sinon.stub()
     };
 
     MainCtrl = $controller('MainCtrl', {
@@ -54,9 +61,14 @@ describe('The Main controller', function() {
   }));
 
   it('should redirect to the dashboard when successfully logged in', inject(function() {
-    MainCtrl.loginSuccess();
+    MainCtrl.loginSuccess({
+      data: {
+        id: 'lfjlk'
+      }
+    });
     expect($location.path.called).toBeTruthy();
     expect($location.path.calledWith('/dashboard')).toBeTruthy();
+    expect(UserSrv.setSession.called).toBeTruthy();
   }));
 
   it('call the login service if user is valid', inject(function() {

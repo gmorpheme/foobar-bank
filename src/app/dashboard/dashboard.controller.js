@@ -2,9 +2,10 @@
 
 angular.module('boilerplate')
   .controller('DashboardCtrl', [
+    '$location',
     'transfers',
     'UserSrv',
-    function(transfers, UserSrv) {
+    function($location, transfers, UserSrv) {
 
       /**
        * Destroys a user session
@@ -12,6 +13,7 @@ angular.module('boilerplate')
        */
       function logout() {
         UserSrv.destroySession();
+        $location.path('/');
       }
 
       _.extend(this, {
