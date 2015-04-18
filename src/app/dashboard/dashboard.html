@@ -1,7 +1,7 @@
 <div id="container">
   <h1>eBanking Dashboard</h1>
 
-  <a href="" ng-click="dashboard.logout()">Logout</a>
+  <a href="" ng-click="dashboard.logout()" id="logout">Logout</a>
 
   <table ng-show="dashboard.transfers.length" id="transfer-list">
     <tr>
@@ -10,9 +10,9 @@
       <th>Date</th>
     </tr>
     <tr ng-repeat="tra in dashboard.transfers" id="transfer-{{tra.id}}">
-      <td class="amount">{{tra.amount}}</td>
-      <td class="to">{{tra.account}}</td>
-      <td class="timestamp">{{tra.date | date:'dd/MM/yyyy @ h:mma'}}</td>
+      <td class="amount" id="transfer-{{tra.id}}-amount">{{tra.amount}}</td>
+      <td class="acount" id="transfer-{{tra.id}}-account">{{tra.account}}</td>
+      <td class="date" id="transfer-{{tra.id}}-date">{{tra.date | date:'dd/MM/yyyy @ h:mma'}}</td>
     </tr>
   </table>
 

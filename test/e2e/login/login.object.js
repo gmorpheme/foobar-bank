@@ -2,11 +2,11 @@
 
 // Primative page interfaces
 function enterUserName(username) {
-  return element(by.model('user.username')).sendKeys(username);
+  return element(by.model('main.user.username')).sendKeys(username);
 }
 
 function enterPassword(password) {
-  return element(by.model('user.password')).sendKeys(password);
+  return element(by.model('main.user.password')).sendKeys(password);
 }
 
 function submitLoginForm() {

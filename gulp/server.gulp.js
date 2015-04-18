@@ -59,7 +59,7 @@ gulp.task('serve:dist', ['build'], function () {
   browserSyncInit('dist');
 });
 
-gulp.task('serve:e2e', function () {
+gulp.task('serve:e2e', ['mock'], function () {
   browserSyncInit(['src', '.tmp'], null, []);
 });
 
