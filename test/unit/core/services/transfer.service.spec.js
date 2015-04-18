@@ -2,8 +2,8 @@
 
 describe('The TransferSrv Service', function() {
 
-  var TransferSrv
-  var UserSrv; 
+  var TransferSrv;
+  var UserSrv;
   var $httpBackend;
 
   beforeEach(module('boilerplate'));
@@ -29,7 +29,7 @@ describe('The TransferSrv Service', function() {
     $httpBackend.expectPOST('/api/session/1234/transfer/').respond(200, {
       blork: 'foo'
     });
-    
+
     TransferSrv.create({
       foo: 'bar'
     }).then(function(data) {

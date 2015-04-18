@@ -2,7 +2,7 @@
 
 describe('The UserSrv Service', function() {
 
-  var UserSrv
+  var UserSrv;
   var $httpBackend;
 
   beforeEach(module('boilerplate'));

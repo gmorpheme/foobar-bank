@@ -28,6 +28,7 @@ angular.module('boilerplate', [
                 $location.path('/');
               }
             },
+
             transfers: function(TransferSrv) {
               return TransferSrv.get();
             }

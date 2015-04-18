@@ -5,7 +5,6 @@ describe('The Main controller', function() {
   var MainCtrl;
   var $location;
   var UserSrv;
-  var validity;
 
   var LoginValidationSrv = {
     validate: sinon.stub()
@@ -28,7 +27,7 @@ describe('The Main controller', function() {
 
     UserSrv = {
       createSession: sinon.stub().returns({
-        then: function(success, failure) {
+        then: function(success) {
           success({
             data: {
               id: 'lkdfjlkjg'
