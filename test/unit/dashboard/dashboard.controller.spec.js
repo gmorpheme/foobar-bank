@@ -5,7 +5,7 @@ describe('The Dashboard controller', function() {
   var DashboardCtrl;
   var UserSrv;
 
-  beforeEach(module('boilerplate'));
+  beforeEach(module('foobank'));
 
   beforeEach(inject(function($controller, $rootScope) {
     scope = $rootScope.$new();

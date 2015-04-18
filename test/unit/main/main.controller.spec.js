@@ -16,7 +16,7 @@ describe('The Main controller', function() {
     valid: false
   });
 
-  beforeEach(module('boilerplate'));
+  beforeEach(module('foobank'));
 
   beforeEach(inject(function($controller, $rootScope) {
     scope = $rootScope.$new();

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('The boilerplate', function() {
+describe('The foobank', function() {
 
   beforeEach(function() {
     browser.get('http://localhost:3000/');

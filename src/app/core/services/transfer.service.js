@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('boilerplate')
+angular.module('foobank')
   .service('TransferSrv', [
     '$http',
     'api',

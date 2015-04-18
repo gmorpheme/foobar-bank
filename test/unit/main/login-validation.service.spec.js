@@ -4,7 +4,7 @@ describe('The LoginValidationSrv Service', function() {
 
   var LoginValidationSrv;
 
-  beforeEach(module('boilerplate'));
+  beforeEach(module('foobank'));
 
   beforeEach(inject(function(_LoginValidationSrv_) {
     LoginValidationSrv = _LoginValidationSrv_;

@@ -6,7 +6,7 @@ describe('The TransferSrv Service', function() {
   var UserSrv;
   var $httpBackend;
 
-  beforeEach(module('boilerplate'));
+  beforeEach(module('foobank'));
 
   beforeEach(inject(function(_TransferSrv_,  _$httpBackend_, _UserSrv_) {
     TransferSrv = _TransferSrv_;

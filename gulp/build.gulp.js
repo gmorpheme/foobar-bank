@@ -42,7 +42,7 @@ gulp.task('partials', function () {
       quotes: true
     }))
     .pipe($.ngHtml2js({
-      moduleName: 'boilerplate'
+      moduleName: 'foobank'
     }))
     .pipe(gulp.dest('.tmp'))
     .pipe($.size());

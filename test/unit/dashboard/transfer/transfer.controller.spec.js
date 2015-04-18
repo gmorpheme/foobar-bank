@@ -5,7 +5,7 @@ describe('The Transfer controller', function() {
   var TransferCtrl;
   var TransferSrv;
 
-  beforeEach(module('boilerplate'));
+  beforeEach(module('foobank'));
 
   beforeEach(inject(function($controller, $rootScope) {
     scope = $rootScope.$new();

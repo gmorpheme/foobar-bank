@@ -4,7 +4,7 @@ var loginPage = require('../page-objects/login.object');
 var dashboardPage = require('../page-objects/dashboard.object');
 var transferPage = require('../page-objects/transfer.object');
 
-describe('The boilerplate', function() {
+describe('The foobank', function() {
 
   beforeEach(function() {
     browser.get('http://localhost:3000/');

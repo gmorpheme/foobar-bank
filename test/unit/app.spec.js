@@ -1,7 +1,7 @@
 'use strict';
 
 describe('Routes test with resolves', function() {
-  beforeEach(module('boilerplate'));
+  beforeEach(module('foobank'));
 
   var $location;
   var $route;

@@ -11,8 +11,8 @@ There are several dependencies that need to be installed seperatley before the a
 * Git
 
 ```
-git clone https://github.com/Joe8Bit/boilerplate.git
-cd boilerplate
+git clone https://github.com/Joe8Bit/foobank.git
+cd foobank
 npm install && bower install && bundle install
 gulp serve
 ```
