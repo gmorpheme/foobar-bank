@@ -13,7 +13,7 @@ test:
     - npm test
     - npm run e2e
 
-deploy:
+deployment:
   stage: 
     branch: master
     commands:
